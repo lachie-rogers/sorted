@@ -8,7 +8,7 @@ fn main() {
 
 fn generate_number_dist() {
 
-    let xs: [i32; 5] = [1, 2, 3, 4, 5];
+    let mut xs: [i32; 5] = [1, 2, 3, 4, 5];
     println!("First element of the array: {}", xs[0]);
 
 }
@@ -25,3 +25,9 @@ fn insertion_sort() {
 
 }
 
+
+fn in_order() {
+
+
+
+}
