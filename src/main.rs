@@ -93,8 +93,3 @@ fn bubble_sort(mut sortable: [i32; 10]) -> [i32; 10] {
 fn insertion_sort() {
 
 }
-
-
-fn in_order() {
-
-}
