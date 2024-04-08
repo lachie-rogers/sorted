@@ -1,5 +1,4 @@
-use std::io;
-use std::mem::swap;
+use std::{thread};
 use rand::Rng;
 
 fn main() {
@@ -72,10 +71,12 @@ fn bubble_sort(mut sortable: [i32; 10]) -> [i32; 10] {
     // Outer loop iterating from 1 to length (exclusive)
     for i in 1..length {
         let mut swapped = false;
-
+        draw(sortable);
         // Inner loop for bubble sort
         for j in 0..length - i {
+
             if sortable[j] > sortable[j + 1] {
+
                 sortable.swap(j, j + 1);
                 swapped = true;
             }
@@ -91,5 +92,23 @@ fn bubble_sort(mut sortable: [i32; 10]) -> [i32; 10] {
 }
 
 fn insertion_sort() {
+
+}
+
+
+fn draw(mut drawable: [i32; 10]){
+
+
+
+    // Find the maximum value in the array to use for scaling, set to improve 10 cap set above.
+    let max_value = *drawable.iter().max().unwrap_or(&0);
+
+    for &num in drawable.iter() {
+        let bar_length = (num as f32 / max_value as f32 * 20.0) as usize; // Scale the bar length
+        let bar = "#".repeat(bar_length); // Create a string of '#' characters for the bar
+        println!("{:3} | {}", num, bar);
+        thread::sleep(std::time::Duration::from_millis(1000));
+    }
+
 
 }
